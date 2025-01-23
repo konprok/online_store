@@ -26,7 +26,7 @@ const Admin = () => {
           <Route path='/users' element={<AllUsers userId={userId} />} />
         </Routes>
       ) : (
-        <div>Loading...</div>  // Możesz tu dodać loader
+        <div>Loading...</div>
       )}
     </div>
   );

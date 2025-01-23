@@ -1,7 +1,7 @@
 .footer{
     height: 15px;
     background-color: #E5C8B8;
-    position: fixed; /* Pozycja jest ustalona względem okna przeglądarki */
-    bottom: 0; /* Przypięcie do dolnej części strony */
-    width: 100%; /* Szerokość na całą stronę */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }

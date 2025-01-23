@@ -11,12 +11,11 @@ const LoginSignup = ({setUserLoggedIn}) => {
   const navigate = useNavigate();
 
   const redirectToShop = async (userId) => {
-    // Wywołanie endpointu po pomyślnej rejestracji
     await fetch(`http://localhost:5252/cart/${userId}`, {
       method: 'POST',
     });
     navigate(`/?userId=${userId}`);
-    setUserLoggedIn(true); // Ustawienie stanu zalogowania na true
+    setUserLoggedIn(true);
   };
 
   const handleLoginClick = () => {
@@ -32,7 +31,6 @@ const LoginSignup = ({setUserLoggedIn}) => {
         password: password
       };
   
-      //POST do endpointu Rejestracji na localhost:5284/Register
       const response = await axios.post('http://localhost:5284/users/register', userData);
   
       if (response.status === 200) {

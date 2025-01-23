@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import './CSS/OfferDetails.css';
-import { CartContext } from '../CartContext'; // Importuj CartContext
+import { CartContext } from '../CartContext';
 
 const OfferDetails = () => {
   const { offerId } = useParams();
@@ -10,16 +10,15 @@ const OfferDetails = () => {
   const userId = params.get('userId');
   const [offer, setOffer] = useState(null);
   const [seller, setSeller] = useState(null);
-  const [ratings, setRatings] = useState([]); // Stan dla recenzji
+  const [ratings, setRatings] = useState([]);
   const [reviewForm, setReviewForm] = useState({
     title: '',
     description: '',
     rate: 1,
-  }); // Stan formularza recenzji
+  });
   const { totalCartItems, setTotalCartItems } = useContext(CartContext);
 
   useEffect(() => {
-    // Pobierz dane oferty i informacje o użytkowniku
     const fetchOfferAndSeller = async () => {
       try {
         const response = await fetch(`http://localhost:5047/offers/${offerId}`);
@@ -38,7 +37,6 @@ const OfferDetails = () => {
   }, [offerId]);
 
   useEffect(() => {
-    // Pobierz recenzje dla danej oferty
     const fetchRatings = async () => {
       try {
         const response = await fetch(`http://localhost:5047/ratings/${offerId}`);
@@ -57,7 +55,7 @@ const OfferDetails = () => {
       const newReview = {
         title: reviewForm.title,
         description: reviewForm.description,
-        createdBy: userId, // Zakładamy, że userId jest w query params
+        createdBy: userId,
         rate: parseInt(reviewForm.rate),
       };
 
@@ -71,8 +69,8 @@ const OfferDetails = () => {
 
       if (response.ok) {
         const addedReview = await response.json();
-        setRatings((prevRatings) => [...prevRatings, addedReview]); // Dodaj nową recenzję do listy
-        setReviewForm({ title: '', description: '', rate: 1 }); // Zresetuj formularz
+        setRatings((prevRatings) => [...prevRatings, addedReview]);
+        setReviewForm({ title: '', description: '', rate: 1 });
       } else {
         console.error('Failed to add review');
       }

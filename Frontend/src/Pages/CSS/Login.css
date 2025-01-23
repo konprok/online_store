@@ -10,10 +10,10 @@
 
 
 .login-container {
-    max-width: 400px; /* Maksymalna szerokość kontenera */
-    max-height: 400px; /* Maksymalna wysokość kontenera */
-    width: 90%; /* Dostosowanie szerokości do zawartości */
-    height: auto; /* Automatyczne dostosowanie wysokości do zawartości */
+    max-width: 400px;
+    max-height: 400px;
+    width: 90%;
+    height: auto;
     background: white;
     margin: auto;
     padding: 40px 60px;

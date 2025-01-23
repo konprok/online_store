@@ -8,7 +8,6 @@ const getDefaultCart = () => {
     let cart = {};
     for (let index = 0; index < allProducts.length+1; index++) {
         cart[index] = 0;
-        
     }
     return cart;
 }
@@ -16,8 +15,6 @@ const getDefaultCart = () => {
 const ShopContextProvider = (props)=>{
 
     const [cartItems,setCartItems] = useState(getDefaultCart());
-
-    
     const addToCart = (itemId) =>{
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
         console.log(cartItems);
@@ -61,7 +58,6 @@ const ShopContextProvider = (props)=>{
             {props.children}
         </ShopContext.Provider>
     )
-
 }
 
 export default ShopContextProvider;

@@ -2,12 +2,12 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import './CartItems.css'
 import { ShopContext } from '../../Context/ShopContext'
-import { CartContext } from '../../CartContext'; // Importuj CartContext
+import { CartContext } from '../../CartContext';
 import remove_icon from '../Assets/cart_cross_icon.png'
 
 const CartItems = () => {
   const { removeFromCart } = useContext(ShopContext);
-  const { totalCartItems, setTotalCartItems } = useContext(CartContext); // Użyj CartContext
+  const { totalCartItems, setTotalCartItems } = useContext(CartContext);
   const [userId, setUserId] = useState(null);
   const [cartData, setCartData] = useState({ offers: {}, price: 0 });
   const location = useLocation();
@@ -25,7 +25,6 @@ const CartItems = () => {
       fetch(`http://localhost:5252/cart/${userId}`)
         .then(response => response.json())
         .then(data => {
-          // Transform the list of offers into an object
           const offersObj = data.offers.reduce((obj, offer) => {
             if (!obj[offer.id]) {
               obj[offer.id] = { ...offer, quantity: 1 };
@@ -47,12 +46,10 @@ const CartItems = () => {
     })
     .then(() => {
       removeFromCart(offerId);
-      fetchCartData(); // Refresh the cart data
-      // Po usunięciu produktu z koszyka, wykonaj kolejne żądanie GET, aby zaktualizować liczbę produktów w koszyku
+      fetchCartData();
       fetch(`http://localhost:5252/cart/items/${userId}`)
         .then(response => response.json())
         .then(data => {
-          // Zakładamy, że endpoint zwraca liczbę produktów w koszyku
           if (typeof data === 'number') {
             setTotalCartItems(data);
           } else {

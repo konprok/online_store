@@ -6,7 +6,6 @@ import ShopCategory from './Pages/ShopCategory';
 import Cart from './Pages/Cart';
 import LoginSignup from './Pages/LoginSignup';
 import Login from './Pages/Login';
-import Product from './Pages/Product';
 import Footer from './Components/Footer/Footer';
 import AddProduct from './Components/AddProduct/AddProduct';
 import Admin from './Pages/Admin';
@@ -58,9 +57,6 @@ function App() {
             <Route path='/womens' element={<ShopCategory category='women' />} />
             <Route path='/kids' element={<ShopCategory category='kids' />} />
             <Route path='/accessories' element={<ShopCategory category='accessories' />} />
-            <Route path='/product' element={<Product />}>
-              <Route path=':productId' element={<Product />} />
-            </Route>
             <Route path='/cart' element={<Cart />} />
             <Route path='/admin' element={<Admin userId={userId} />} />
             <Route path='/users' element={<AllUsers userId={userId} />} />

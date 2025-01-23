@@ -35,14 +35,12 @@ const AddProduct = () => {
       });
   }, []);
 
-  // useEffect do automatycznego czyszczenia statusMessage po 3 sekundach
   useEffect(() => {
     if (statusMessage !== '') {
       const timer = setTimeout(() => {
         setStatusMessage('');
       }, 3000);
 
-      // Sprzątanie po odmontowaniu lub przy zmianie statusMessage
       return () => clearTimeout(timer);
     }
   }, [statusMessage]);

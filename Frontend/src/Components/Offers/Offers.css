@@ -1,6 +1,5 @@
-/* Offers.css */
 body {
-    font-family: Arial, sans-serif; /* Consistent font family */
+    font-family: Arial, sans-serif;
 }
 
 .offers {
@@ -15,34 +14,34 @@ body {
 }
 
 .offers-search-and-select {
-    display: flex; /* Using flex to place children side by side */
-    width: 100%; /* Full width */
-    justify-content: center; /* Center the children horizontally */
-    gap: 10px; /* Space between the search input and the select box */
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
 }
 
 .offers-search-input, .addproduct-selector {
-    flex: 1; /* Both elements take equal space */
-    padding: 10px 15px; /* Padding for better usability */
-    border: 2px solid #ccc; /* Solid border with a moderate thickness */
-    border-radius: 10px; /* Rounded corners */
-    font-size: 1.2rem; /* Larger font size for better readability */
-    outline: none; /* Removing the outline on focus */
+    flex: 1;
+    padding: 10px 15px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    outline: none;
 }
 
 .offers-search-input:focus, .addproduct-selector:focus {
-    border-color: #62b991; /* Highlight focus with a color change */
+    border-color: #62b991;
 }
 
 .offers h2 {
     font-weight: 400;
-    font-size: 1.5rem; /* Adjusted font size */
+    font-size: 1.5rem;
 }
 
 .offers-item {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Zmieniono na 5 kolumn */
-    gap: 20px; /* Odstęp między kafelkami */
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
 }
 
 .offer-link {
@@ -72,7 +71,7 @@ body {
 }
 
 .offer-details {
-    flex: 1;             /* Wypełnia przestrzeń między górą a dołem */
+    flex: 1;
     text-align: center;
     width: 100%;
 }
@@ -94,18 +93,17 @@ body {
     cursor: pointer;
 }
 
-/* Ograniczenie opisu do kilku linii (np. 3) */
 .offer-description {
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    overflow: hidden;           /* Ukrywa resztę tekstu */
-    text-overflow: ellipsis;    /* Dodaje "..." na końcu */
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .offer-footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px; /* odstęp między ceną a przyciskiem */
-    margin-top: auto; /* w razie potrzeby dociska go do dołu */
+    gap: 10px;
+    margin-top: auto;
 }

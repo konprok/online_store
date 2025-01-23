@@ -1,20 +1,19 @@
 import React, { useState, useEffect, useContext, useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Offers.css';
-import { CartContext } from '../../CartContext'; // Importuj CartContext
+import { CartContext } from '../../CartContext';
 
 const Offers = () => {
   const [categories, setCategories] = useState([{ id: '', name: 'All Categories' }]);
   const [selectedCategory, setSelectedCategory] = useState('');
   const [offers, setOffers] = useState([]);
-  const [searchTerm, setSearchTerm] = useState(''); // Stan dla wyszukiwania
-  const [sortOption, setSortOption] = useState(''); // Stan dla opcji sortowania
+  const [searchTerm, setSearchTerm] = useState('');
+  const [sortOption, setSortOption] = useState('');
 
   const location = useLocation();
   const userId = new URLSearchParams(location.search).get('userId');
   const { setTotalCartItems } = useContext(CartContext);
 
-  // 1. Pobieranie listy kategorii
   useEffect(() => {
     fetch('http://localhost:5047/categories')
       .then((response) => response.json())
@@ -22,7 +21,6 @@ const Offers = () => {
       .catch((error) => console.error('Error fetching categories:', error));
   }, []);
 
-  // 2. Pobieranie ofert na podstawie wybranej kategorii (lub wszystkich, jeśli ""/All)
   useEffect(() => {
     const endpoint = selectedCategory
       ? `http://localhost:5047/category/${selectedCategory}/offers`
@@ -34,7 +32,6 @@ const Offers = () => {
       .catch((error) => console.error('Error fetching offers:', error));
   }, [selectedCategory]);
 
-  // 3. Lokalne filtrowanie ofert (tylko w aktualnie pobranych)
   const filteredOffers = useMemo(() => {
     return offers.filter((offer) => {
       const lowerTitle = offer.title.toLowerCase();
@@ -48,7 +45,6 @@ const Offers = () => {
     });
   }, [offers, searchTerm]);
 
-  // 4. Sortowanie ofert (najpierw filtrowanych)
   const sortedOffers = useMemo(() => {
     const sorted = [...filteredOffers];
     switch (sortOption) {
@@ -65,35 +61,29 @@ const Offers = () => {
         sorted.sort((a, b) => b.title.localeCompare(a.title));
         break;
       default:
-        // Brak sortowania
         break;
     }
     return sorted;
   }, [filteredOffers, sortOption]);
 
-  // Obsługa wyboru kategorii
   const changeHandler = (e) => {
     setSelectedCategory(e.target.value);
   };
 
-  // Obsługa zmiany tekstu wyszukiwania
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
-  // Obsługa zmiany opcji sortowania
   const handleSortChange = (event) => {
     setSortOption(event.target.value);
   };
 
-  // Dodawanie do koszyka
   const addToCart = (event, offerId) => {
     event.stopPropagation();
     fetch(`http://localhost:5252/cart/${userId}?offerId=${offerId}`, {
       method: 'PATCH',
     })
       .then(() => {
-        // Po dodaniu produktu do koszyka, pobierz liczbę elementów w koszyku
         fetch(`http://localhost:5252/cart/items/${userId}`)
           .then((response) => response.json())
           .then((data) => setTotalCartItems(data))

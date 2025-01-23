@@ -34,7 +34,6 @@
     
 }
 
-
 .nav-menu li:hover{
     color: #64AB81;
 }
@@ -77,14 +76,13 @@
     color: white;
 }
 
-
 .nav-account {
     position: relative;
   }
   
   .account-menu {
     position: absolute;
-    top: 50px; /* Adjust this value to position the menu below the icon */
+    top: 50px;
     right:-2px;
     
     border: 1px solid #ccc;
@@ -93,41 +91,41 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
-    z-index: 1000; /* Ensure the menu is on top of other elements */
-    visibility: hidden; /* Initially hidden */
-    opacity: 0; /* Initially transparent */
-    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
     background-color: #FFFDF9;
   }
   
   .nav-account:hover .account-menu {
-    visibility: visible; /* Make visible when hovering */
-    opacity: 1; /* Fully opaque when hovering */
+    visibility: visible;
+    opacity: 1;
   }
   
    .account-menu a, .account-menu .logout-button {
-    font-size: 16px; /* Ensure the font size is consistent */
-    font-family: 'Poppins', sans-serif; /* Consistent font family */
-    background-color: #FFFDF9; /* Consistent background */
-    color: #626262; /* Consistent color */
-    border-radius: 75px; /* Rounded borders */
-    padding: 10px 20px; /* Consistent padding */
-    border: none; /* No border */
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFFDF9;
+    color: #626262;
+    border-radius: 75px;
+    padding: 10px 20px;
+    border: none;
     cursor: pointer;
 }
 
  .account-menu a:hover, .account-menu .logout-button:hover {
-    background-color: #f0f0f0; /* Hover effect */
+    background-color: #f0f0f0;
 }
 
 .nav-shop-button {
     display: inline-block;
-    text-decoration: none; /* Usuwa podkreślenie linka */
+    text-decoration: none;
     width: 150px;
     height: 50px;
-    line-height: 50px; /* Wyśrodkowanie tekstu w pionie */
-    text-align: center; /* Wyśrodkowanie tekstu w poziomie */
-    border-radius: 75px; /* Zaokrąglone rogi */
+    line-height: 50px;
+    text-align: center;
+    border-radius: 75px;
     font-family: Poppins, sans-serif;
     font-size: 16px;
     font-weight: 500;

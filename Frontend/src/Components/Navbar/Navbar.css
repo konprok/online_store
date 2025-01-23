@@ -1,0 +1,146 @@
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    padding: 16px;
+    box-shadow: 0 1px 3px -2px black;
+   background-color: #FFFDF9;
+}
+
+.nav-logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-menu{
+    display:flex;
+    align-items: center;
+    list-style: none;
+    gap: 50px;
+    color: #626262;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.nav-menu li{
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    cursor: pointer;
+    
+}
+
+
+.nav-menu li:hover{
+    color: #64AB81;
+}
+
+.nav-login-cart{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-login-cart button{
+    width: 150px;
+    height: 50px;
+    outline: none;
+    border: none;
+    border-radius: 75px;
+    color: whitesmoke;
+    font-family: poppins;
+    font-size: 16px;
+    font-weight: 500;
+    background: #82C5A6;
+    cursor: pointer;
+}
+
+.nav-login-cart button:active, button:hover{
+    background-color:#64AB81;
+}
+
+.nav-cart-count{
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -35px;
+    margin-left: -55px;
+    border-radius: 11px;
+    font-size: 14px;
+    background: #82C5A6;
+    color: white;
+}
+
+
+.nav-account {
+    position: relative;
+  }
+  
+  .account-menu {
+    position: absolute;
+    top: 50px; /* Adjust this value to position the menu below the icon */
+    right:-2px;
+    
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000; /* Ensure the menu is on top of other elements */
+    visibility: hidden; /* Initially hidden */
+    opacity: 0; /* Initially transparent */
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+    background-color: #FFFDF9;
+  }
+  
+  .nav-account:hover .account-menu {
+    visibility: visible; /* Make visible when hovering */
+    opacity: 1; /* Fully opaque when hovering */
+  }
+  
+   .account-menu a, .account-menu .logout-button {
+    font-size: 16px; /* Ensure the font size is consistent */
+    font-family: 'Poppins', sans-serif; /* Consistent font family */
+    background-color: #FFFDF9; /* Consistent background */
+    color: #626262; /* Consistent color */
+    border-radius: 75px; /* Rounded borders */
+    padding: 10px 20px; /* Consistent padding */
+    border: none; /* No border */
+    cursor: pointer;
+}
+
+ .account-menu a:hover, .account-menu .logout-button:hover {
+    background-color: #f0f0f0; /* Hover effect */
+}
+
+.nav-shop-button {
+    display: inline-block;
+    text-decoration: none; /* Usuwa podkreślenie linka */
+    width: 150px;
+    height: 50px;
+    line-height: 50px; /* Wyśrodkowanie tekstu w pionie */
+    text-align: center; /* Wyśrodkowanie tekstu w poziomie */
+    border-radius: 75px; /* Zaokrąglone rogi */
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: whitesmoke;
+    background: #82C5A6;
+    cursor: pointer;
+    border: none;
+}
+
+.nav-shop-button:hover {
+    background-color: #64AB81;
+}
+
+.nav-shop-button:active {
+    background-color: #4E9D6C;
+}

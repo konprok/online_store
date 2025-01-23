@@ -1,0 +1,111 @@
+/* Offers.css */
+body {
+    font-family: Arial, sans-serif; /* Consistent font family */
+}
+
+.offers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: auto;
+    background-color: #fffdf9;
+    margin-bottom: 15px;
+}
+
+.offers-search-and-select {
+    display: flex; /* Using flex to place children side by side */
+    width: 100%; /* Full width */
+    justify-content: center; /* Center the children horizontally */
+    gap: 10px; /* Space between the search input and the select box */
+}
+
+.offers-search-input, .addproduct-selector {
+    flex: 1; /* Both elements take equal space */
+    padding: 10px 15px; /* Padding for better usability */
+    border: 2px solid #ccc; /* Solid border with a moderate thickness */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 1.2rem; /* Larger font size for better readability */
+    outline: none; /* Removing the outline on focus */
+}
+
+.offers-search-input:focus, .addproduct-selector:focus {
+    border-color: #62b991; /* Highlight focus with a color change */
+}
+
+.offers h2 {
+    font-weight: 400;
+    font-size: 1.5rem; /* Adjusted font size */
+}
+
+.offers-item {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Zmieniono na 5 kolumn */
+    gap: 20px; /* Odstęp między kafelkami */
+}
+
+.offer-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.offer-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    background: #EFDCCE;
+    width: 200px;
+    height: 400px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+
+.offer-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.offer-details {
+    flex: 1;             /* Wypełnia przestrzeń między górą a dołem */
+    text-align: center;
+    width: 100%;
+}
+
+.price {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.addToCartMain-button {
+    width: 120px;
+    height: 35px;
+    border-radius: 20px;
+    color: whitesmoke;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    background: #62b991;
+    cursor: pointer;
+}
+
+/* Ograniczenie opisu do kilku linii (np. 3) */
+.offer-description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;           /* Ukrywa resztę tekstu */
+    text-overflow: ellipsis;    /* Dodaje "..." na końcu */
+  }
+
+  .offer-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* odstęp między ceną a przyciskiem */
+    margin-top: auto; /* w razie potrzeby dociska go do dołu */
+}

@@ -1,0 +1,113 @@
+
+.add-product{
+    width: 100%;
+    height: 70vh;
+    background: #EFDCCE;
+    padding-top: 100px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.add-product-container {
+    max-width: 400px; /* Maksymalna szerokość kontenera */
+    max-height: 600px; /* Maksymalna wysokość kontenera */
+    width: 90%; /* Dostosowanie szerokości do zawartości */
+    height: auto; /* Automatyczne dostosowanie wysokości do zawartości */
+    background: white;
+    margin: auto;
+    padding: 40px 60px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.addproduct-itemfield{
+    display:flex;
+    flex-direction: column;
+    /* gap: 20px; */
+    /* margin-top:30px; */
+    align-items: center;
+    justify-content: center;
+}
+
+.addproduct-itemfield input{
+    height: 30px;
+    width: 100%;
+    padding-left: 20px;
+    border: 1px solid #c9c9c9;
+    border-radius: 10px;
+    outline: none;
+    color: #5c5c5c;
+    font-size: 15px;
+}
+
+.addproduct-selector{
+    height: 30px;
+    width: 100%;
+    padding-left: 20px;
+    border: 1px solid #c9c9c9;
+    border-radius: 10px;
+    outline: none;
+    color: #5c5c5c;
+    font-size: 15px;
+}
+
+.addproduct-thumbnail-img-small {
+    margin-top: 30px;
+    width: 40px; /* Szerokość ikony */
+    height: auto;
+}
+
+/* Duży obraz, który został już dodany */
+.addproduct-thumbnail-img-large {
+    margin-top: 30px;
+    max-width: 150px; /* Maksymalna szerokość obrazu */
+    height: auto;
+}
+
+.addproduct-button{
+    width: 100%;
+    height:40px;
+    color: white;
+    background-color: #5c5c5c;
+    margin-top: 30px;
+    border:none;
+    border-radius: 75px;
+    font-size: 18px;
+    font-family: poppins;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+/* Zielone okienko sukcesu */
+.success-prompt {
+    background-color: #dff2bf;  /* Jasna zieleń */
+    color: #4f8a10;            /* Ciemna zieleń fontu */
+    border: 1px solid #4f8a10;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  /* Czerwone okienko błędu */
+  .error-prompt {
+    background-color: #ffbaba; /* Jasny róż/czerwony */
+    color: #d8000c;           /* Mocna czerwień fontu */
+    border: 1px solid #d8000c;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  .product-description {
+    font-size: 1rem;
+    color: #666;
+    margin: 15px auto; /* Wyśrodkowanie */
+    text-align: center;
+    max-width: 600px; /* Maksymalna szerokość opisu */
+}

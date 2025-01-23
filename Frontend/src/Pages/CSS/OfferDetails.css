@@ -1,0 +1,354 @@
+/* Ogólny kontener strony */
+.offer-details-container {
+  display: flex;
+  flex-direction: row;
+  /* WYRÓWNANIE DO GÓRY */
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  background-color: #fffdf9;
+}
+
+/* Sekcja szczegółów oferty */
+.offer-main {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  /* CENTROWANIE W POZIOMIE */
+  align-items: center;
+  /* Tekst też wyśrodkuj */
+  text-align: center;
+  gap: 20px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Kolumna recenzji */
+.review-column {
+  flex: 1;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Zdjęcie oferty */
+.offer-main img {
+  border-radius: 10px;
+  /* By nie był zbyt duży */
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Tytuł oferty */
+.offer-main h2 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #333;
+}
+
+.offer-main .product-description {
+  font-size: 1rem;
+  margin: 15px 0;
+  color: #666;
+}
+
+.product-details-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center; /* Tabela i przycisk będą na środku */
+}
+
+
+/* Opis oferty */
+.offer-main p {
+    font-size: 1rem;
+    margin: 5px 0;
+    text-align: center;
+    color: #666;
+}
+
+/* Cena oferty */
+.offer-main .price {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #e67e22; /* Pomarańczowy kolor ceny */
+    margin-top: 10px;
+}
+
+/* Przycisk "Add to cart" */
+.offer-main .addToCart-button {
+    width: 200px;
+    height: 50px;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    color: whitesmoke;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    background: linear-gradient(45deg, #62b991, #50a678);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.offer-main .addToCart-button:hover {
+    transform: scale(1.05);
+    background: #50a678;
+}
+
+/* Sekcja dodawania recenzji */
+.add-review-section {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-review-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #444;
+}
+
+.add-review-section input,
+.add-review-section textarea,
+.add-review-section select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.add-review-section input:focus,
+.add-review-section textarea:focus,
+.add-review-section select:focus {
+    border-color: #62b991;
+    outline: none;
+}
+
+.add-review-section .add-review-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #62b991;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.add-review-section .add-review-button:hover {
+    background-color: #50a678;
+    transform: scale(1.02);
+}
+
+/* Sekcja recenzji */
+.ratings-section {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ratings-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #444;
+}
+
+.ratings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Pojedyncza recenzja */
+.rating-item {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.rating-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.rating-header strong {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.rating-score {
+    background-color: #62b991;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+/* Opis recenzji */
+.rating-description {
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 0;
+}
+
+.rating-author {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.rating-author span {
+    font-weight: bold;
+    color: #333;
+}
+
+.rating-date {
+    font-size: 0.9rem;
+    color: #999;
+    text-align: right;
+}
+
+/* Sekcja szczegółów produktu */
+.product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0; /* Odstęp od innych sekcji */
+    padding: 15px;
+    background-color: #f9f9f9; /* Subtelne tło */
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Dopasowanie do szerokości kontenera */
+  }
+  
+  .product-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    padding: 10px;
+    border-bottom: 1px solid #eee; /* Delikatna linia rozdzielająca */
+  }
+  
+  .product-detail:last-child {
+    border-bottom: none; /* Usuń linię rozdzielającą dla ostatniego elementu */
+  }
+  
+  .detail-label {
+    font-weight: bold;
+    color: #444; /* Kolor etykiety */
+  }
+  
+  .detail-value {
+    color: #333; /* Kolor wartości */
+    font-weight: 500;
+  }
+
+  /* Opis produktu */
+.product-description {
+    font-size: 1rem;
+    color: #666;
+    margin: 15px 0;
+    text-align: center;
+  }
+  
+  /* Przycisk "Add to cart" */
+  .addToCart-button {
+    width: 100%; /* Dopasowanie do szerokości kontenera */
+    max-width: 300px; /* Maksymalna szerokość */
+    margin-top: 5px;
+    height: 50px;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #62b991, #50a678);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+  
+  .addToCart-button:hover {
+    transform: scale(1.05);
+    background: #50a678;
+  }
+  
+  /* Tabela szczegółów produktu */
+  .product-details-table {
+    width: 100%;
+    max-width: 300px; /* Ograniczamy szerokość tabeli, by pasowała pod obrazek */
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .product-details-table td {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  .product-details-table .detail-label {
+    font-weight: bold;
+    text-align: left; /* lub center, jeśli wolisz */
+    color: #444;
+  }
+
+  .product-details-table .detail-value {
+    text-align: right; /* lub center, jeśli wolisz */
+    color: #333;
+    font-weight: 500;
+  }
+
+  .product-details-table tr:last-child td {
+    border-bottom: none;
+  }
+
+/* Przycisk "Add to cart" */
+.addToCart-button {
+  width: 100%;
+  max-width: 300px;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #62b991, #50a678);
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.addToCart-button:hover {
+  transform: scale(1.05);
+  background: #50a678;
+}

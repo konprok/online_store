@@ -53,6 +53,10 @@ public class UserController : ControllerBase
         {
             return BadRequest(ex.Message);
         }
+        catch (InvalidPasswordException ex)
+        {
+            return BadRequest(ex.Message);
+        }
         catch (Exception ex)
         {
             return StatusCode(500, ex.Message);

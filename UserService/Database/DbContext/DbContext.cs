@@ -1,12 +1,19 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using UserService.Database.Configuration;
 using UserService.Database.Entities;
+using UserService.Services.Interfaces;
 
 namespace UserService.Database.DbContext;
 
 public class UserDbContext : Microsoft.EntityFrameworkCore.DbContext
 {
-    public UserDbContext(DbContextOptions<UserDbContext> options) : base(options) { }
+    private readonly IPasswordHasher _passwordHasher;
+
+    public UserDbContext(DbContextOptions<UserDbContext> options, IPasswordHasher passwordHasher) : base(options)
+    {
+        _passwordHasher = passwordHasher;
+    }
     
     public DbSet<UserEntity> Users { get; set; } = null!;
     
@@ -24,7 +31,7 @@ public class UserDbContext : Microsoft.EntityFrameworkCore.DbContext
             {
                 Id = Guid.NewGuid(),
                 UserName = "admin",
-                Password = "admin", 
+                PasswordHash = _passwordHasher.Hash("admin"), 
                 Email = "admin@example.com",
                 IsAdmin = true
             });

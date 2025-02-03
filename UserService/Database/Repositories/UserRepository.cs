@@ -4,6 +4,7 @@ using UserService.Database.Entities;
 using Microsoft.EntityFrameworkCore;
 using UserService.Models;
 using UserService.Models.Exceptions;
+using UserService.Services;
 
 namespace UserService.Database.Repositories;
 
@@ -43,11 +44,11 @@ public class UserRepository : IUserRepository
         var user = new UserResponse(userEntity);
         return user;
     }
-    public async Task<UserEntity> GetUser(string userEmail, string password)
+    public async Task<UserEntity> GetUser(string userEmail)
     {
         if (userEmail == null) throw new InvalidUserException();
         UserEntity? user = await _dbContext.Users
-            .Where(x => x.Email.ToLower() == userEmail.ToLower() && x.Password == password)
+            .Where(x => x.Email.ToLower() == userEmail.ToLower())
             .SingleOrDefaultAsync();
 
         if (user == null)

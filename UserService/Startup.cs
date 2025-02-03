@@ -68,6 +68,7 @@ public class Startup
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IUserService, Services.UserService>();
         services.AddScoped<IAdminService, Services.AdminService>();
+        services.AddSingleton<IPasswordHasher, Services.PasswordHascher>();
     }
     
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserDbContext dbContext)

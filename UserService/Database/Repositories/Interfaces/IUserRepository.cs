@@ -6,7 +6,7 @@ namespace UserService.Database.Repositories.Interfaces;
 public interface IUserRepository
 {
     Task<List<UserEntity>> GetUsersList();
-    Task<UserEntity> GetUser(string userName, string password);
+    Task<UserEntity> GetUser(string userEmail);
     Task<UserResponse> GetUser(Guid userId);
     Task<UserEntity> GetUserEntity(Guid userId);
     Task InsertUserAsync(UserEntity user);

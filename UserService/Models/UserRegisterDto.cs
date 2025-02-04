@@ -1,9 +1,9 @@
 ﻿namespace UserService.Models;
 
-public class User
+public class UserRegisterDto
 {
-    public User() { }
-    public User(string userName, string password, string email)
+    public UserRegisterDto() { }
+    public UserRegisterDto(string userName, string email, string password)
     {
         UserName = userName;
         Password = password;

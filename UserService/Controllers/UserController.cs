@@ -18,7 +18,7 @@ public class UserController : ControllerBase
     }
     
     [HttpPost("register")]
-    public async Task<ActionResult<UserEntity>> PostUser([FromBody] User user)
+    public async Task<ActionResult<UserResponse>> PostUser([FromBody] UserRegisterDto user)
     {
         try
         {
@@ -39,7 +39,7 @@ public class UserController : ControllerBase
     }
     
     [HttpPost("login")]
-    public async Task<ActionResult<UserEntity>> PostUserLogin([FromBody] User user)
+    public async Task<ActionResult<UserResponse>> PostUserLogin([FromBody] UserLoginDto user)
     {
         try
         {

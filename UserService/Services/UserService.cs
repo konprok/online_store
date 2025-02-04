@@ -16,24 +16,29 @@ public class UserService : IUserService
         _passwordHasher = passwordHasher;
     }
     
-    public async Task<UserEntity> PostUser(User user)
+    public async Task<UserResponse> PostUser(UserRegisterDto user)
     {
-        UserEntity newUser = new() { UserName = user.UserName, Email = user.Email};
-        newUser.PasswordHash = _passwordHasher.Hash(user.Password);
+        UserEntity newUser = new()
+        {
+            UserName = user.UserName, Email = user.Email,
+            PasswordHash = _passwordHasher.Hash(user.Password)
+        };
         await _userRepository.InsertUserAsync(newUser);
         await _userRepository.SaveAsync();
 
-        return newUser;
+        UserResponse userResponse = new UserResponse(newUser);
+        return userResponse;
     }
-    public async Task<UserEntity> GetUser(string userEmail, string password)
+    public async Task<UserResponse> GetUser(string userEmail, string password)
     {
         var user = await _userRepository.GetUser(userEmail);
-        if (_passwordHasher.Verify(password, user.PasswordHash))
+        if (!_passwordHasher.Verify(password, user.PasswordHash))
         {
-            return user;
+            throw new InvalidPasswordException();
         }
 
-        throw new InvalidPasswordException();
+        UserResponse userResponse = new UserResponse(user);
+        return userResponse;
     }
 
     public async Task<UserResponse> GetUser(Guid userId)
